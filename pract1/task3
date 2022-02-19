@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main() {
+    system("chcp 65001");
+    cout << "Введите число яблок:" << endl;
+    int n = 0;
+    cin >> n;
+    if(n>10 and n<21)
+        cout<< n << " " <<"яблок"<<endl;
+    else if(n %10 ==0 or n %10 >4)
+        cout<< n << " " <<"яблок"<<endl;
+    else if(n %10 ==1)
+        cout<< n << " " <<"яблоко"<<endl;
+    else if(n %10>1 and n %10<5)
+        cout<< n << " " <<"яблока"<<endl;
+    return 0;
+}
