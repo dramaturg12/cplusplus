@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main(){
+    cout << "Введите два числа и действие\n" << endl;
+    float a = 0;
+    float b = 0;
+    char op = 0;
+    cin >> a >> b >> op;
+    switch(op){
+        case '+':
+            cout << a+b << endl;
+            break;
+        case '-':
+            cout << a-b << endl;
+            break;
+        case '*':
+            cout << a*b << endl;
+            break;
+        case '/':
+            cout << a/b << endl;
+            break;
+        default:
+            cout <<"invalid operation" << endl;
+            break;
+    }
+    return 0;
+}
