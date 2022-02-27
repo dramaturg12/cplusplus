@@ -1,0 +1,12 @@
+int task1(){
+    cout<<"press 1 to start"<<endl;
+    int a;
+    cin>>a;
+    if(a==1){
+        cout<<"#include <iostream>\nint main() { \n    std::cout << \"Hello, World!\\n\" << std::endl;\n    return 0;\n}";
+    }
+    else{
+        cout<<"incorrect input";
+    }
+    return 0;
+}
