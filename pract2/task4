@@ -1,0 +1,12 @@
+int task4(){
+    cout<<"input decimal number\n";
+    int decimal;
+    cin>>decimal;
+    string bin;
+    while (decimal>0){
+        bin = to_string(decimal%2) + bin;
+        decimal=decimal/2;
+    }
+    cout<<bin;
+    return 0;
+}
