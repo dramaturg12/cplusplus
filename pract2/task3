@@ -1,5 +1,5 @@
 #include <cmath>
-int task2(){
+int task3(){
     cout<<"input binary number\n";
     int bin, n, i,decnum;
     cin>>bin;
