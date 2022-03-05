@@ -1,0 +1,42 @@
+int task2(){
+    cout << "Input two numbers and operation\n" << endl;
+    float a = 0;
+    float b = 0;
+    char op = 0;
+    try{
+        cin >> a >> b >> op;
+    if (cin.fail()) {
+        throw 1;
+    }
+}
+catch(int x){
+    cerr<<"expected number,not symbol";
+    return -1;
+}
+    switch(op){
+        case '+':
+            cout << a+b << endl;
+            break;
+        case '-':
+            cout << a-b << endl;
+            break;
+        case '*':
+            cout << a*b << endl;
+            break;
+        case '/':
+            try{
+
+                if (b==0){
+                    throw 1;
+                }
+                else cout<<a/b;
+            }catch (int a){
+                cerr<<"don't divide by zero\n";
+                return -1;
+            }
+            break;
+        default:
+            cout <<"invalid operation"<< endl;
+    }
+    return 0;
+}
