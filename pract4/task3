@@ -1,0 +1,11 @@
+void insert_sort(int* arr,const int size){
+    for (int i = 1; i < size; i++){
+        int current= arr[i];
+        int position=i;
+        while(position > 0 and arr[position-1]>current){
+            arr[position]=arr[position-1];
+            position--;
+        }
+        arr[position]=current;
+    }
+}
