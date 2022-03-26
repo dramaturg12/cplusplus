@@ -1,0 +1,12 @@
+void binary_search(int sorted[],int x){
+    int left = 0;
+    int right = sizeof(sorted);
+    int mid;
+    while (left<=right){
+        mid=(left+right)/2;
+        if(sorted[mid]==x) cout<<"position "<< mid << endl;
+        if(sorted[mid]< x) left = mid+1;
+        else right = mid-1;
+    }
+    if(sorted[mid]!=x) cout<<"-1";
+}
