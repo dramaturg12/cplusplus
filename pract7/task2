@@ -1,0 +1,14 @@
+#include "iostream"
+#include <fstream>
+using namespace std;
+
+int main(){
+    system("chcp 65001");
+    string buff;
+    ifstream fin("pract7.txt");
+    while(fin >> buff){
+        cout << buff << ' ';
+    }
+    fin.close();
+    return 0;
+}
