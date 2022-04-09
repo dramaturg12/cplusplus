@@ -1,0 +1,14 @@
+int main(){
+    system("chcp 65001");
+    ifstream fin("pract7.txt");
+    string buff;
+    while (!fin.eof())
+    {
+        fin>>buff;
+        cout<<buff<<' ';
+    }
+    cout<<endl;
+    cout<<"End of the file";
+    fin.close();
+    return 0;
+}
