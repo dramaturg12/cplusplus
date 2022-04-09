@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(){
+    system("chcp 65001");
+    string buff;
+    ifstream fin("pract7.txt");
+    getline(fin,buff);
+    cout<<buff;
+    fin.close()
+    return 0;
+}
+
+int main(){
+    system("chcp 65001");
+    ifstream fin("pract7.txt");
+    int n=50;
+    char* buff=new char[n+1]; buff[n]=0;
+    fin.read(buff,n);
+    cout<<buff;
+    delete [] buff;
+    fin.close();
+    return 0;
+}
