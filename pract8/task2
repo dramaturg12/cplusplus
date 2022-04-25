@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+int string_to_vec(string s)
+{
+    vector <string> equation;
+    int j = 1;
+    int i = 0;
+    equation.resize(j);
+    while (i<s.size()){
+        if (s[i]==' ') {
+            i++;
+            continue;
+        }
+        if(s[i]=='+')
+        {
+            string el= "";
+            el += s[i];
+            j += 2;
+            equation.resize(j);
+            equation[j-2] += el;
+            i++;
+        }else{
+            string el = "";
+            el += s[i];
+            equation[j-1] += el;
+            i++;
+        }
+    }
+    for(int i = 0; i<equation.size();i++)
+    {
+        cout<<equation[i]<<' ';
+    }
+    return 0;
+}
