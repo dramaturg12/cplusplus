@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+class Particle
+{
+public:
+    double x;
+    double impulse;
+    double mass;
+    Particle(double x,double mass, double impulse)
+    {
+        this->x=x;
+        this->impulse=impulse;
+        this->mass=mass;
+    };
+    Particle& move (double dx)
+    {
+        x=x+dx;
+    }
+};
+class Wave
+{
+public:
+    double amplitude;
+    double wavelength;
+    Wave(double amplitude, double wavelength)
+    {
+        this->amplitude=amplitude;
+        this->wavelength=wavelength;
+    }
+    Wave& change_length (double dl)
+    {
+        wavelength=wavelength+dl;
+    }
+};
+class Photon : public Particle,public Wave
+{
+public:
+    Photon(double x,double impulse, double wavelength,double amplitude):Particle(x,0,impulse), Wave(amplitude, wavelength)
+    {
+    }
+};
