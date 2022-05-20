@@ -1,0 +1,9 @@
+void send_message()
+    {
+        ofstream file("nameoffile");
+        string buff;
+        cout<<"input your message and photon will send it into the file"<<endl;
+        cin>>buff;
+        file<<buff;
+        file.close();
+    }
