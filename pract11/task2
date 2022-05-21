@@ -1,0 +1,13 @@
+class Farm_Animal : public Animal
+{
+public:
+    vector<string> resource;
+    void get_source(string res)
+    {
+        for (int i = 0; i < resource.size(); i++)
+        {
+            if(res==resource[i]) cout << "Got "<< res <<" from "<<name<<endl;
+            else cout<< name << " has no " << res<< endl;
+        }
+    }
+};
