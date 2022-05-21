@@ -1,0 +1,87 @@
+#include "iostream"
+#include "vector"
+using namespace std;
+
+class Matrix
+{
+public:
+    int row, col;
+    vector<vector<int>> M;
+
+    Matrix(int row, int col, vector<vector<int>> input) {
+        this->row = row;
+        this->col = col;
+        M.resize(row, vector<int>(col, 0));
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                M[i][j] = input[i][j];
+            }
+        }
+    }
+
+    Matrix& sum(Matrix B)
+    {
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                M[i][j] += B.M[i][j];
+            }
+        }
+    }
+    Matrix& transp()
+    {
+        vector<vector<int>> trans;
+        trans = M;
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                M[i][j] = trans[j][i];
+            }
+        }
+
+    }
+    Matrix operator+(const Matrix &other)
+    {
+        Matrix temp(row,col,M);
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                temp.M[i][j] = this->M[i][j] + other.M[i][j];
+            }
+        }
+        return temp;
+    };
+
+    void print()
+    {
+        for (int i = 0; i < M.size(); i++)
+        {
+            for (int j = 0; j < M[i].size(); j++)
+            {
+                cout << M[i][j] << ' ';
+            }
+            cout << '\n';
+        }
+    }
+
+
+};
+
+int main()
+{
+    Matrix M1(3,3,{{1,2,4},{2,3,3},{2,1,2}});
+    Matrix M2(3,3,{{1,1,1},{2,7,5},{1,4,1}});
+    M1.print();
+    cout<<endl;
+    M1.transp();
+    M1.print();
+    cout<<endl;
+    M2.print();
+    cout<<endl;
+    Matrix D= M1+M2;
+    D.print();
+    return 0;
+}
